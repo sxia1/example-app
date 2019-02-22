@@ -1,7 +1,19 @@
 language: python
-python:
-	- "3.6"
+matrix:
+	include:
+		- os: linux
+		  env: DB=sqlite3
+		  python: "3.6"
+		- os: osx
+		  env: DB=sqlite3
+		  python: "3.6"
 install:
-	- pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-	- pytest
+- pytest
+notifications:
+email:
+recipients:
+- sxia1@stuy.edu
+on_success: never
+on_failure: always
