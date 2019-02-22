@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block head %}<title> WELCOME </title>{% endblock %}
+{%block content%}
+    <h1>WELCOME, YOU FINALLY MADE IT</h1>
+
+    <br> 
+    <h3>username: {{username}}</h3>
+
+    <br>
+    took you long enough -_-
+
+    <br>
+    but congrats lol
+    <br>
+    <form action="/logout">
+      <input type="submit" name="logoutbutton" value="logout">
+    </form>
+{%endblock%}
