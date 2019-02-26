@@ -1,7 +1,21 @@
 language: python
+
 os: linux
-python: "3.6"
+
+python:
+    -"2.7"
+    -"3.6"
+
 install:
     - pip install -r requirements.txt
+
 script:
     - python test.py
+
+notifications:
+  email:
+    recipients:
+      - one@example.com
+      - other@example.com
+    on_success: never
+    on_failure: always
