@@ -1,8 +1,17 @@
 language: python
 
-os: linux
+os:
+    - linux
+    - osx
 
-python: "3.6"
+python:
+    - 3.6
+    - 2.7
+
+matrix:
+  exclude:
+  - python: 2.7
+  - os: osx
 
 install:
     - pip install -r requirements.txt
