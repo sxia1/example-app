@@ -30,7 +30,35 @@
         <p>
             The basic idea is that repo should always have a version of your project that is functional.
             <br>
+            Continouous Integeration shows its value for test-driven development.
 
+            <h3> Types of tests </h3>
+            <ul>
+                <li>
+                    Unit Testing
+                    <li> Testing small pieces of code like individual functions. </li>
+                    <p> Example: Testing your square root function for your calculator project. </p>
+                </li> <br>
+                <li>
+                    Integration Testing
+                    <li> Testing to see if different parts of your project work together.</li>
+                    <p>
+                        Example: Testing to see if different modules work with each other such as your flask app,
+                        database, and javascript work alongside each other.
+                        <a href="https://www.softwaretestinghelp.com/what-is-integration-testing/">
+                            Click here for more. </a>
+                    </p>
+                </li> <br>
+                <li>
+                    Functional Testing
+                    <li> Testing the functionality of the application either manually or with automation tools. </li>
+                    <p>
+                        Example: Testing if your project does everything as intended.
+                        <a href="https://www.guru99.com/functional-testing.html">
+                            Click here for more. </a>
+                    </p>
+                </li> <br>
+            </ul>
         </p>
 
         <h3> Travis CI </h3>
@@ -48,7 +76,7 @@
                 </p>
                 <h4> Setting up Travis CI</h4>
                 <ol>
-                    <li> Logging into <a href="travis-ci.org"> travis-ci.org </a> with your github credentials. </li>
+                    <li> Logging into <a href="http://www.travis-ci.org">travis-ci.org </a> with your github credentials. </li>
                     <li> Toggle the switch next to your project repo. </li>
                     <li> Configure Travis by adding a <span style="border:dotted;font-weight:bold"> .travis.yml </span> file to your project repo. </li> <br>
                     <ol>
