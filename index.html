@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            Continouous Integeration
+        </title>
+        <style type="text/css">
+            .code {
+                background-color: #bfbfbf;
+                width: 20%;
+                margin-left: 1.5%;
+                padding-left: .5%;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1> Continouous Integeration </h1>
+        <h2 style="padding-left:40px">   by Sophia Xia & Wei Wen Zhou</h2>
+        <hr>
+
+        <h3> What is Continouous Integeration?</h3>
+        <div class="code">
+            In software engineering, continuous <br>
+            integration (CI) is the practice of merging <br>
+            all developer working copies to a shared <br>
+            mainline several times a day <br>
+            <div style="text-align:right; margin-right: 10px">WIKI</div>
+        </div>
+        <p>
+            The basic idea is that repo should always have a version of your project that is functional.
+            <br>
+
+        </p>
+
+        <h3> Travis CI </h3>
+            <p>
+                We recommend using Travis CI because... <br>
+                <ul>
+                    <li> Works with github and is part of github education pack</li>
+                    <li> Free to use for public repositories on github </li>
+                    <li> Supports open source projects </li>
+                </ul>
+
+                <p>
+                    Travis CI automatically create virtual environments for testing and
+                    running all the tests specified by the users and send email notifications
+                </p>
+                <h4> Setting up Travis CI</h4>
+                <ol>
+                    <li> Logging into <a href="travis-ci.org"> travis-ci.org </a> with your github credentials. </li>
+                    <li> Toggle the switch next to your project repo. </li>
+                    <li> Configure Travis by adding a <span style="border:dotted;font-weight:bold"> .travis.yml </span> file to your project repo. </li> <br>
+                    <ol>
+                        <li>
+                            In this file, we will specify to Travis that the language of our project and which versions of the language. <br>
+                            For our example, we will be testing our project in Python version 2.7 and Python version 3.6
+                        </li>
+                        <div class="code">
+                            language: python <br>
+                            <br>
+                            python: <br>
+                                - 3.6 <br>
+                                - 2.7 <br>
+                        </div> <br>
+
+                        <li>
+                            Next, we tell Travis that we are testing our project in Ubuntu
+                        </li>
+                        <div class="code">
+                            os: <br>
+                                - linux <br>
+                        </div> <br>
+                        <li>
+                            Once we have that we need to tell Travis how to setup our project.
+                        </li>
+                        <div class="code">
+                            install: <br>
+                                - pip install -r requirements.txt <br>
+                        </div> <br>
+                        <li>
+                            Finally we need to tell Travis what tests to run on the virtual machine created. <br>
+                            For example, we will be using pytest to perform unit tests.
+                        </li>
+                        <div class="code">
+                            script: <br>
+                                - pytest <br>
+                        </div> <br>
+                    </ol>
+                        <h4> At the end our .travis.yml file should look this. </h4>
+                    <div class="code">
+                        language: python <br>
+                        <br>
+                        os: <br>
+                            - linux <br>
+                        <br>
+                        python: <br>
+                            - 3.6 <br>
+                            - 2.7 <br>
+                        <br>
+                        install: <br>
+                            - pip install -r requirements.txt <br>
+                        <br>
+                        script: <br>
+                            - pytest <br>
+                        <br>
+                    </div>
+                </ol>
+            </p>
+    </body>
+</html>
