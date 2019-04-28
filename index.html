@@ -24,7 +24,7 @@
     </center>
     <hr>
 
-    
+
     <h3> What is Continouous Integeration?</h3>
     <div class="code">
       <p>In software engineering, continuous integration<br>
@@ -37,7 +37,7 @@
       <br>
       Continouous Integeration shows its value for test-driven development.</p>
     <br>
-    
+
     <h3> Types of tests </h3>
 
     Unit Testing
@@ -68,7 +68,7 @@
     </ul>
     <br>
 
-    
+
     <h3> Travis CI </h3>
     <p>
       We recommend using Travis CI because... <br>
@@ -117,7 +117,7 @@
 	  &emsp;- os: linux<br>
 	  &emsp;python: 3.6<br>
 	  &emsp;- os: osx<br>
-	  &emsp;python: 3.6	
+	  &emsp;python: 3.6
 	</div><br>
 	Or you can also specify which environments to exclude.
 	<div class="code">
@@ -126,7 +126,7 @@
 	  &emsp;- os: linux<br>
 	  &emsp;python: 3.6<br>
 	  &emsp;- os: osx<br>
-	  &emsp;python: 3.6	
+	  &emsp;python: 3.6
 	</div><br>
       </li>
 
@@ -144,7 +144,7 @@
       </div> <br>
     </ol>
 
-    
+
     <h4> At the end our .travis.yml file should look like this. </h4>
     <div class="code">
       language: python <br>
@@ -165,28 +165,41 @@
     </div>
 
     <h3> Making Test Cases </h3>
-    Unit Testing (<a href="https://docs.python.org/3/library/unittest.html?highlight=doc%20test#module-unittest">official documentation</a>)
+    <p>
+        Unit Testing
+        (<a href="https://docs.python.org/3/library/unittest.html?highlight=doc%20test#module-unittest">Official documentation</a>)
+        <br>
+        For our example, we will be using pytest instead of unittest from the python standard library.
+        <a href="https://docs.pytest.org/en/latest/"> Official documentation</a>
+        <br>
+        &emsp;Why pytest instead unittest?
+        <ul>
+            <li> Support for both python2 and python3 </li>
+            <li> Updates are not tied to python releases </li>
+            <li> Can write test functions without <span style="font-style:italic">having</span> to create a test class</li>
+        </ul>
+    </p>
     <ol>
       <li><p>
-	  First make a file that has a valid filename. pytest will run all files in the current directory if they are named test_*.py or *_test.py.<br>For example, test_unit.py and unit_test.py are valid filenames.</p>   
+	  First make a file that has a valid filename. pytest will run all files in the current directory if they are named test_*.py or *_test.py.<br>For example, test_unit.py and unit_test.py are valid filenames.</p>
       </li><br>
-      
+
       <li>Then import all the functions that you want to test.<br>
 	For example if the file with the functions is called main.py:
 	<div class="code">
 	  from main import *
 	</div>
       </li><br>
-      
+
       <li>Lastly, create functions that will test your code by using assert which checks for equality.<br>
 	In this example, we are testing an add function and a function that gets the nth term of the fibbonacci sequence.<br>
 	<div class="code">
 	  def test_add():<br>
 	  &emsp;assert add(1,2) == 3<br><br>
-	  
+
 	  def test_fib0():<br>
 	  &emsp;assert fib(10) == 55<br><br>
-	  
+
 	  def test_fib1():<br>
 	  &emsp;answer = [0,1,1,2,3,5,8,13,21,3]<br>
 	  &emsp;assert [fib(n) for n in range(10)] == answer
@@ -194,16 +207,18 @@
       </li>
     </ol>
 
-    <p>If you're a fan of docstrings and you don't want to make a separate file for testing, doctesting is an alternative you can use.      <a href="https://docs.python.org/3/library/doctest.html?highlight=doc%20test#module-doctest">official documentation</a>
+    <p>
+        If you're a fan of docstrings and you don't want to make a separate file for testing, doctesting is an alternative you can use.
+        <a href="https://docs.python.org/3/library/doctest.html?highlight=doc%20test#module-doctest">Official documentation</a>
     </p>
-    
+
     </br>
     <p>
       This is just a basic tutorial and there are many other things you can do like homebrew, automatically deploy your project on a successful build etc.
-      For more information go the the 
+      For more information go the the
       <a href="https://docs.travis-ci.com/">
-        official documentation </a>
+        Official documentation </a>
     </p>
-    
+
   </body>
 </html>
