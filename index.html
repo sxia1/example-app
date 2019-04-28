@@ -1,139 +1,173 @@
 <!DOCTYPE html>
-    <head>
-        <title>
-            Continouous Integeration
-        </title>
-        <style type="text/css">
-            .code {
-                background-color: #bfbfbf;
-                width: 20%;
-                margin-left: 1.5%;
-                padding-left: .5%;
-                font-size: 18px;
-            }
-        </style>
-    </head>
+<html>
 
-    <body>
-        <h1> Continouous Integeration </h1>
-        <h2 style="padding-left:40px">   by Sophia Xia & Wei Wen Zhou</h2>
-        <hr>
+  <head>
+    <title>
+      Continouous Integeration
+    </title>
+    <style type="text/css">
+      .code {
+      background-color: #bfbfbf;
+      width: 20%;
+      margin-left: 1.5%;
+      padding-left: .5%;
+      font-size: 18px;
+      }
+    </style>
+  </head>
 
-        <h3> What is Continouous Integeration?</h3>
-        <div class="code">
-            In software engineering, continuous <br>
-            integration (CI) is the practice of merging <br>
-            all developer working copies to a shared <br>
-            mainline several times a day <br>
-            <div style="text-align:right; margin-right: 10px">WIKI</div>
-        </div>
-        <p>
-            The basic idea is that repo should always have a version of your project that is functional.
-            <br>
-            Continouous Integeration shows its value for test-driven development.
+  <body>
 
-            <h3> Types of tests </h3>
-            <ul>
-                <li>
-                    Unit Testing
-                    <li> Testing small pieces of code like individual functions. </li>
-                    <p> Example: Testing your square root function for your calculator project. </p>
-                </li> <br>
-                <li>
-                    Integration Testing
-                    <li> Testing to see if different parts of your project work together.</li>
-                    <p>
-                        Example: Testing to see if different modules work with each other such as your flask app,
-                        database, and javascript work alongside each other.
-                        <a href="https://www.softwaretestinghelp.com/what-is-integration-testing/">
-                            Click here for more. </a>
-                    </p>
-                </li> <br>
-                <li>
-                    Functional Testing
-                    <li> Testing the functionality of the application either manually or with automation tools. </li>
-                    <p>
-                        Example: Testing if your project does everything as intended.
-                        <a href="https://www.guru99.com/functional-testing.html">
-                            Click here for more. </a>
-                    </p>
-                </li> <br>
-            </ul>
-        </p>
+    <center>
+      <h1> Continouous Integeration </h1>
+      <h2 style="padding-left:40px">   by Sophia Xia & Wei Wen Zhou</h2>
+    </center>
+    <hr>
 
-        <h3> Travis CI </h3>
-            <p>
-                We recommend using Travis CI because... <br>
-                <ul>
-                    <li> Works with github and is part of github education pack</li>
-                    <li> Free to use for public repositories on github </li>
-                    <li> Supports open source projects </li>
-                </ul>
+    
+    <h3> What is Continouous Integeration?</h3>
+    <div class="code">
+      <p>In software engineering, continuous integration<br>
+	(CI) is the practice of<br>
+	merging all developer working copies to a<br>
+	shared mainline several times a day</p>
+      <div style="text-align:right; margin-right: 10px">WIKI</div>
+    </div>
+    <p> The basic idea is that repo should always have a version of your project that is functional.
+      <br>
+      Continouous Integeration shows its value for test-driven development.</p>
+    <br>
+    
+    <h3> Types of tests </h3>
 
-                <p>
-                    Travis CI automatically create virtual environments for testing and
-                    running all the tests specified by the users and send email notifications
-                </p>
-                <h4> Setting up Travis CI</h4>
-                <ol>
-                    <li> Logging into <a href="http://www.travis-ci.org">travis-ci.org </a> with your github credentials. </li>
-                    <li> Toggle the switch next to your project repo. </li>
-                    <li> Configure Travis by adding a <span style="border:dotted;font-weight:bold"> .travis.yml </span> file to your project repo. </li> <br>
-                    <ol>
-                        <li>
-                            In this file, we will specify to Travis that the language of our project and which versions of the language. <br>
-                            For our example, we will be testing our project in Python version 2.7 and Python version 3.6
-                        </li>
-                        <div class="code">
-                            language: python <br>
-                            <br>
-                            python: <br>
-                                - 3.6 <br>
-                                - 2.7 <br>
-                        </div> <br>
+    Unit Testing
+    <ul>
+      <li> Testing small pieces of code like individual functions. </li>
+      <li> <p> Example: Testing your square root function for your calculator project. </p> </li>
+    </ul>
 
-                        <li>
-                            Next, we tell Travis that we are testing our project in Ubuntu
-                        </li>
-                        <div class="code">
-                            os: <br>
-                                - linux <br>
-                        </div> <br>
-                        <li>
-                            Once we have that we need to tell Travis how to setup our project.
-                        </li>
-                        <div class="code">
-                            install: <br>
-                                - pip install -r requirements.txt <br>
-                        </div> <br>
-                        <li>
-                            Finally we need to tell Travis what tests to run on the virtual machine created. <br>
-                            For example, we will be using pytest to perform unit tests.
-                        </li>
-                        <div class="code">
-                            script: <br>
-                                - pytest <br>
-                        </div> <br>
-                    </ol>
-                        <h4> At the end our .travis.yml file should look this. </h4>
-                    <div class="code">
-                        language: python <br>
-                        <br>
-                        os: <br>
-                            - linux <br>
-                        <br>
-                        python: <br>
-                            - 3.6 <br>
-                            - 2.7 <br>
-                        <br>
-                        install: <br>
-                            - pip install -r requirements.txt <br>
-                        <br>
-                        script: <br>
-                            - pytest <br>
-                        <br>
-                    </div>
-                </ol>
-            </p>
-    </body>
+    Integration Testing
+    <ul>
+      <li> Testing to see if different parts of your project work together.</li>
+      <li> <p>
+	  Example: Testing to see if different modules work with each other such as your flask app,
+	  database, and javascript work alongside each other.
+	  <a href="https://www.softwaretestinghelp.com/what-is-integration-testing/">
+            Click here for more. </a>
+      </p> </li>
+    </ul>
+
+    Functional Testing
+    <ul>
+      <li> Testing the functionality of the application either manually or with automation tools. </li>
+      <li> <p>
+	  Example: Testing if your project does everything as intended.
+	  <a href="https://www.guru99.com/functional-testing.html">
+            Click here for more. </a>
+      </p> </li>
+    </ul>
+    <br>
+
+    
+    <h3> Travis CI </h3>
+    <p>
+      We recommend using Travis CI because... <br>
+      <ul>
+	<li> Works with github and is part of github education pack</li>
+	<li> Free to use for public repositories on github </li>
+	<li> Supports open source projects </li>
+      </ul>
+      Travis CI also automatically creates virtual environments for testing,
+      runs all the tests specified by the users, and sends email notifications
+    </p>
+
+    <h4> Setting up Travis CI </h4>
+    <ol>
+      <li> Log into <a href="http://www.travis-ci.org">travis-ci.org </a> with your github credentials </li>
+      <li> Toggle the switch next to the desired project repositories </li>
+      <li> Configure Travis by adding a <span style="background-color:yellow;font-weight:bold"> .travis.yml</span> file to the root of your project repository </li>
+      <br>
+      <li>
+	In this file, we will specify to Travis that the language of our project and which versions of the language. <br>
+	In our example, we will be testing our project in Python version 2.7 and Python version 3.6
+      </li>
+
+      <div class="code">
+	language: python <br>
+	<br>
+	python: <br>
+	- 3.6 <br>
+	- 2.7 <br>
+      </div> <br>
+
+      <li>Next, you have to tell Travis which operating system to run tests on</li>
+      <div class="code">
+	os: <br>
+	- linux <br>
+	- osx <br>
+	- windows <br>
+      </div> <br>
+
+      <li>Once we have that we need to tell Travis how to setup our project</li>
+      <div class="code">
+	install: <br>
+	- pip install -r requirements.txt <br>
+      </div> <br>
+
+      <li>Finally we need to tell Travis what tests to run on the virtual machine created.<br>For example, we will be using pytest to perform unit tests.
+      </li>
+      <div class="code">
+	script: <br>
+	- pytest <br>
+      </div> <br>
+
+      <li>If you want to test your project on multiple operating systems and different versions of languages, you can use a matrix.<br>
+	You can specify which environments to include.
+      <div class="code">
+	matrix:<br>
+	include:<br>
+	- os: linux<br>
+	python: 3.6<br>
+	- os: osx<br>
+	python: 3.6	
+      </div>
+      You can also specify which environments to exclude. Useful since Travis will run all combinations of the operating systems and language versions you specified if 
+      <div class="code">
+	matrix:<br>
+	exclude:<br>
+	- os: linux<br>
+	python: 3.6<br>
+	- os: osx<br>
+	python: 3.6	
+      </div>
+      </li>
+    </ol>
+    
+    <h4> At the end our .travis.yml file should look like this. </h4>
+    <div class="code">
+      language: python <br>
+      <br>
+      os: <br>
+      - linux <br>
+      <br>
+      python: <br>
+      - 3.6 <br>
+      - 2.7 <br>
+      <br>
+      install: <br>
+      - pip install -r requirements.txt <br>
+      <br>
+      script: <br>
+      - pytest <br>
+      <br>
+    </div>
+
+    <p>
+      This is just a basic tutorial and there are many other things you can do like homebrew, automatically deploy your project on a successful build etc.
+      For more information go the the 
+      <a href="https://docs.travis-ci.com/">
+        official documentation </a>
+    </p>
+    
+  </body>
 </html>
