@@ -164,6 +164,40 @@
       <br>
     </div>
 
+    <h3> Making Test Cases </h3>
+    Unit Testing (<a href="https://docs.python.org/3/library/unittest.html?highlight=doc%20test#module-unittest">official documentation</a>)
+    <ol>
+      <li><p>
+	  First make a file that has a valid filename. pytest will run all files in the current directory if they are named test_*.py or *_test.py.<br>For example, test_unit.py and unit_test.py are valid filenames.</p>   
+      </li><br>
+      
+      <li>Then import all the functions that you want to test.<br>
+	For example if the file with the functions is called main.py:
+	<div class="code">
+	  from main import *
+	</div>
+      </li><br>
+      
+      <li>Lastly, create functions that will test your code by using assert which checks for equality.<br>
+	In this example, we are testing an add function and a function that gets the nth term of the fibbonacci sequence.<br>
+	<div class="code">
+	  def test_add():<br>
+	  &emsp;assert add(1,2) == 3<br><br>
+	  
+	  def test_fib0():<br>
+	  &emsp;assert fib(10) == 55<br><br>
+	  
+	  def test_fib1():<br>
+	  &emsp;answer = [0,1,1,2,3,5,8,13,21,3]<br>
+	  &emsp;assert [fib(n) for n in range(10)] == answer
+	</div>
+      </li>
+    </ol>
+
+    <p>If you're a fan of docstrings and you don't want to make a separate file for testing, doctesting is an alternative you can use.      <a href="https://docs.python.org/3/library/doctest.html?highlight=doc%20test#module-doctest">official documentation</a>
+    </p>
+    
+    </br>
     <p>
       This is just a basic tutorial and there are many other things you can do like homebrew, automatically deploy your project on a successful build etc.
       For more information go the the 
