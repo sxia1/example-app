@@ -8,7 +8,7 @@
     <style type="text/css">
       .code {
       background-color: #bfbfbf;
-      width: 20%;
+      width: 40%;
       margin-left: 1.5%;
       padding-left: .5%;
       font-size: 18px;
@@ -96,69 +96,71 @@
 	language: python <br>
 	<br>
 	python: <br>
-	- 3.6 <br>
-	- 2.7 <br>
+	&emsp;- 3.6 <br>
+	&emsp;- 2.7 <br>
       </div> <br>
 
       <li>Next, you have to tell Travis which operating system to run tests on</li>
       <div class="code">
 	os: <br>
-	- linux <br>
-	- osx <br>
-	- windows <br>
+	&emsp;- linux <br>
+	&emsp;- osx <br>
+	&emsp;- windows <br>
       </div> <br>
+
+      <li>If you want to test your project on multiple operating systems and different versions of languages, you can use a matrix.
+	A matrix is useful because Travis will run tests on all the different combinations of operating systems and language versions you specified (how we did in steps 4 and 5) and that may not be the desired result.<br><br>
+	Instead you can specify which environments to include.
+	<div class="code">
+	  matrix:<br>
+	  &emsp;include:<br>
+	  &emsp;- os: linux<br>
+	  &emsp;python: 3.6<br>
+	  &emsp;- os: osx<br>
+	  &emsp;python: 3.6	
+	</div><br>
+	Or you can also specify which environments to exclude.
+	<div class="code">
+	  matrix:<br>
+	  &emsp;exclude:<br>
+	  &emsp;- os: linux<br>
+	  &emsp;python: 3.6<br>
+	  &emsp;- os: osx<br>
+	  &emsp;python: 3.6	
+	</div><br>
+      </li>
 
       <li>Once we have that we need to tell Travis how to setup our project</li>
       <div class="code">
 	install: <br>
-	- pip install -r requirements.txt <br>
+	&emsp;- pip install -r requirements.txt <br>
       </div> <br>
 
       <li>Finally we need to tell Travis what tests to run on the virtual machine created.<br>For example, we will be using pytest to perform unit tests.
       </li>
       <div class="code">
 	script: <br>
-	- pytest <br>
+	&emsp;- pytest <br>
       </div> <br>
-
-      <li>If you want to test your project on multiple operating systems and different versions of languages, you can use a matrix.<br>
-	You can specify which environments to include.
-      <div class="code">
-	matrix:<br>
-	include:<br>
-	- os: linux<br>
-	python: 3.6<br>
-	- os: osx<br>
-	python: 3.6	
-      </div>
-      You can also specify which environments to exclude. Useful since Travis will run all combinations of the operating systems and language versions you specified if 
-      <div class="code">
-	matrix:<br>
-	exclude:<br>
-	- os: linux<br>
-	python: 3.6<br>
-	- os: osx<br>
-	python: 3.6	
-      </div>
-      </li>
     </ol>
+
     
     <h4> At the end our .travis.yml file should look like this. </h4>
     <div class="code">
       language: python <br>
       <br>
       os: <br>
-      - linux <br>
+      &emsp;- linux <br>
       <br>
       python: <br>
-      - 3.6 <br>
-      - 2.7 <br>
+      &emsp;- 3.6 <br>
+      &emsp;- 2.7 <br>
       <br>
       install: <br>
-      - pip install -r requirements.txt <br>
+      &emsp;- pip install -r requirements.txt <br>
       <br>
       script: <br>
-      - pytest <br>
+      &emsp;- pytest <br>
       <br>
     </div>
 
